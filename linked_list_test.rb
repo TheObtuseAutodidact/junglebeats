@@ -99,8 +99,26 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "zero first second third", jb.all
   end
 
+  def test_it_can_find_a_node
+    jb = JungleBeats.new("first")
+    assert_equal "first", jb.find("first")
+  end
 
+  def test_it_can_find_a_node_in_a_list_of_more_than_one
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    assert_equal "third", jb.find("third")
+  end
 
+  def test_find_fails
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    assert_equal "", jb.find("blagh")
+  end
 
 
 end

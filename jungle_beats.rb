@@ -63,6 +63,18 @@ class JungleBeats
     string.strip
   end
 
+  def find(node)
+    current = @head
+    count.times do
+      if current.data == node
+        return current.data
+      else
+        current = current.link
+      end
+    end
+      ""
+  end
+
 
 
 
