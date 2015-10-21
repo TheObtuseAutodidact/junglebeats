@@ -11,5 +11,13 @@ class JungleBeats
     @head
   end
 
+  def tail?
+    if @head.link == nil
+      true
+    end
+  end
+
+
+
 
 end

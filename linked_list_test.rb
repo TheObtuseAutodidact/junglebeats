@@ -34,6 +34,11 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "first", jb.head.data
   end
 
+  def test_it_identifies_tail_as_node_with_no_link
+    jb = JungleBeats.new("first")
+    assert_equal true, jb.tail?
+  end
+
 end
 #
 # class LinkedListTest < Minitest::Test
