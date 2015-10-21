@@ -74,6 +74,19 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "zero", jb.head.data
   end
 
+  def test_it_can_count_number_of_nodes_in_list
+    jb = JungleBeats.new("first")
+    assert_equal 1, jb.count
+  end
+
+  def test_it_can_count_a_few_more_nodes_in_list
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    assert_equal 3, jb.count
+  end
+
+
 
 
 

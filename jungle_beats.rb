@@ -43,6 +43,16 @@ class JungleBeats
     @head = new_head
   end
 
+  def count
+    counter = 1
+    current = @head
+    until current.link == nil
+      counter += 1
+      current = current.link
+    end
+    counter
+  end
+
 
 
 
