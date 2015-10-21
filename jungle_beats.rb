@@ -24,6 +24,19 @@ class JungleBeats
     tail.link = new_node
   end
 
+  def include?(string)
+    current = @head
+    until current.link == nil
+      current = current.link
+      if current.data == string
+        return true
+      else
+        return false
+        break
+      end
+    end
+  end
+
 
 
 

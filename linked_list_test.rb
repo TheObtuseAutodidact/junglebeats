@@ -52,6 +52,21 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "third", jb.tail.data
   end
 
+  def test_if_include_can_find_node
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    assert_equal true, jb.include?("second")
+  end
+
+  def test_if_include_returns_false_if_node_not_present
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    assert_equal false, jb.include?("fourth")
+  end
+
+
 end
 #
 # class LinkedListTest < Minitest::Test
