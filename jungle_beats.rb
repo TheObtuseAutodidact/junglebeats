@@ -32,10 +32,17 @@ class JungleBeats
         return true
       else
         return false
-        break
       end
     end
   end
+
+  def prepend(data)
+    new_head = Node.new(data)
+    current = @head
+    new_head.link = @head
+    @head = new_head
+  end
+
 
 
 

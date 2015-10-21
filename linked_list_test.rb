@@ -66,6 +66,16 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal false, jb.include?("fourth")
   end
 
+  def test_if_it_can_prepend_one_node
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    assert_equal "zero", jb.head.data
+  end
+
+
+
 
 end
 #
