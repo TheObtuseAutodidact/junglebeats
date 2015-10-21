@@ -1,20 +1,10 @@
 class Node
+  attr_accessor :link
+  attr_reader :data
 
-  def initialize(data)
+  def initialize(data, link=nil)
     @data = data
-    @link = nil
-  end
-
-  def data
-    @data
-  end
-
-  def link
-    @link
-  end
-
-  def has_link? # maybe list's responsiblilty
-    @link ? true : false
+    @link = link
   end
 
 end
