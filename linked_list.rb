@@ -9,20 +9,21 @@ class LinkedList
   def head
     @node
   end
-
-  def tail
-    current = @node
-    until current.link == nil
-      current = current.link
-    end
-    current.data
-  end
-
-  def append(new_node)
-    next_node = Node.new(next_node)
-    tail.link = next_node
-  end
 end
+
+  # def tail?
+  #   # current = @node
+  #   # until current.link == nil
+  #   #   current = current.link
+  #   # end
+  #   # current.data
+  # end
+
+#   def append(new_node)
+#     next_node = Node.new(next_node)
+#     tail.link = next_node
+#   end
+# end
 
   # def append(data)
   #   new_node = Node.new(data)

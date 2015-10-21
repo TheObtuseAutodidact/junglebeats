@@ -34,9 +34,22 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "first", jb.head.data
   end
 
-  def test_it_identifies_tail_as_node_with_no_link
+  def test_it_returns_tail
     jb = JungleBeats.new("first")
-    assert_equal true, jb.tail?
+    assert_equal "first", jb.tail.data
+  end
+
+  def test_it_can_append_new_node_to_tail
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    assert_equal "second", jb.tail.data
+  end
+
+  def test_if_tail_is_found_with_more_than_one_node_in_list
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    assert_equal "third", jb.tail.data
   end
 
 end
