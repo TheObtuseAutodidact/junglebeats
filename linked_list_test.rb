@@ -28,6 +28,12 @@ class JungleBeatsTest < MiniTest::Test
     jb = JungleBeats.new("first")
     assert_equal "first", jb.head.data
   end
+
+  def test_it_can_call_head
+    jb = JungleBeats.new("first")
+    assert_equal "first", jb.head.data
+  end
+
 end
 #
 # class LinkedListTest < Minitest::Test

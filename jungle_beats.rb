@@ -1,10 +1,14 @@
 require './node'
 
 class JungleBeats
-  attr_reader :head
+  attr_reader :head, :data
 
-  def initialize(head)
-    @head = Node.new(head)
+  def initialize(data)
+    @head = Node.new(data)
+  end
+
+  def head
+    @head
   end
 
 
