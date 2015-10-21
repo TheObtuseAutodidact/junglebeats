@@ -86,6 +86,19 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal 3, jb.count
   end
 
+  def test_if_all_returns_string_of_node_data_attributes
+    jb = JungleBeats.new("first")
+    assert_equal "first", jb.all
+  end
+
+  def test_if_all_returns_string_of_all_node_data_attributes
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    assert_equal "zero first second third", jb.all
+  end
+
 
 
 

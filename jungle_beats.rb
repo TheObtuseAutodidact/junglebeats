@@ -53,6 +53,18 @@ class JungleBeats
     counter
   end
 
+  def all
+    current = @head
+    string = ""
+    count.times do
+      string += "#{current.data} "
+      current = current.link
+    end
+    string.strip
+  end
+
+
+
 
 
 
