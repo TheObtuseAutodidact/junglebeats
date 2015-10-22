@@ -107,4 +107,22 @@ class JungleBeats
     end
   end
 
+  #
+  # def pop(last_n_elements)
+  # x = (count - last_n_elements)
+  # find(x)
+  # #current
+  #
+  #   # sub_list = current.link
+  #   # current.link = nil
+  #   #sub_list.data
+  #   # sub_list = current.data
+  #   # current = @head
+  #   # (count - 2).times do
+  #   #   current = current.link
+  #   # end
+  #   # current.data = nil
+  #   # sub_list
+  # end
+
 end

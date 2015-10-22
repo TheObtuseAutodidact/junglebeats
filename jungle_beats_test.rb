@@ -206,6 +206,17 @@ class JungleBeatsTest < MiniTest::Test
     jb.insert("larry moe curly shemp", 0)
     assert_equal 8, jb.count
   end
+  #
+  # def test_pop_removes_last_item_in_list
+  #   jb = JungleBeats.new("first")
+  #   jb.append("second")
+  #   jb.append("third")
+  #   jb.prepend("zero")
+  #   jb.insert("larry moe curly shemp", 0)
+  #   jb.all
+  #   jb.pop(2)
+  #   assert_equal "third", jb.pop
+  # end
 
 
 
