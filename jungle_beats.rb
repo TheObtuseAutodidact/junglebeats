@@ -83,5 +83,15 @@ class JungleBeats
       temp_array.join(" ")
   end
 
+  def insert(data, position)
+    new_node = Node.new(data)
+    current = @head
+    (position - 1).times do
+      current = current.link
+    end
+    pointer = current.link
+    new_node.link = pointer
+    current.link = new_node
+  end
 
 end

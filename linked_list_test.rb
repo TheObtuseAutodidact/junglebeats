@@ -127,5 +127,14 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "second", jb.find(2)
   end
 
+  def test_it_inserts_a_single_element_into_specified_position
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("inserted", 2)
+    assert_equal "zero first inserted second third", jb.all
+  end
+
 
 end
