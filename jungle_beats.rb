@@ -63,22 +63,25 @@ class JungleBeats
     string.strip
   end
 
-  def find(node)
+  def find(list_num, elements=1)
+    temp_array = []
     current = @head
-    count.times do
-      if current.data == node
-        return current.data
-      else
+    if list_num == 0
+      return current.data
+    elsif count < list_num + 1
+     return "Error: out of range"
+    else
+      (list_num).times do
         current = current.link
       end
+      temp_array << current.data
+      (elements - 1).times do
+        current = current.link
+        temp_array << current.data
+      end
     end
-      ""
+      temp_array.join(" ")
   end
-
-
-
-
-
 
 
 end

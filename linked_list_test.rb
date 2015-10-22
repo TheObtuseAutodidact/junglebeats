@@ -1,7 +1,6 @@
 require 'minitest'
 require 'minitest/autorun'
 require './node'
-require './linked_list'
 require './jungle_beats'
 
 class NodeTest < Minitest::Test
@@ -100,130 +99,33 @@ class JungleBeatsTest < MiniTest::Test
   end
 
   def test_it_can_find_a_node
-    jb = JungleBeats.new("first")
-    assert_equal "first", jb.find("first")
+    jb = JungleBeats.new("first", )
+    assert_equal "first", jb.find(0, 1)
   end
 
-  def test_it_can_find_a_node_in_a_list_of_more_than_one
+  def test_it_finds_the_second_element
     jb = JungleBeats.new("first")
     jb.append("second")
     jb.append("third")
     jb.prepend("zero")
-    assert_equal "third", jb.find("third")
+    assert_equal "first second", jb.find(1, 2)
   end
 
-  def test_find_fails
+  def test_find_returns_an_error_if_out_of_range
     jb = JungleBeats.new("first")
     jb.append("second")
     jb.append("third")
     jb.prepend("zero")
-    assert_equal "", jb.find("blagh")
+    assert_equal "Error: out of range", jb.find(5)
+  end
+
+  def test_find_returns_correct_node_from_list
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    assert_equal "second", jb.find(2)
   end
 
 
 end
-#
-# class LinkedListTest < Minitest::Test
-#   def test_it_exists
-#     assert LinkedList
-#   end
-#
-#   def test_it_can_return_head
-#     list = LinkedList.new("node1")
-#     assert_equal list.node, list.head
-#   end
-#
-#   def test_it_can_find_the_tail_in_a_one_item_list
-#     list = LinkedList.new("node1")
-#     assert_equal "node1", list.tail
-#   end
-#
-#   def test_it_can_append_to_list
-#     list = LinkedList.new("node1")
-#     list.append("node2")
-#     assert_equal "node2", list.tail
-#   end
-
-  # def test_it_can_find_tail_in_a_list_of_two_items
-  #   node2 = Node.new("node2")
-  #   list = LinkedList.new("node1")
-  #   assert_equal node2, list.tail
-  # end
-#end
-
-
-#
-  # def test_it_can_count_the_nodes_in_an_empty_list
-  #   list = LinkedList.new()
-  #   assert_equal "Empty List", list.count
-  # end
-#
-#   def test_it_can_count_a_list_of_one_node
-#     node = Node.new('string')
-#     list = LinkedList.new(node)
-#     assert_equal 1, list.count
-#   end
-#
-#   def test_it_can_count_a_list_of_two_items
-#     node2 = Node.new("node2")
-#     node = Node.new("string", node2)
-#     list = LinkedList.new(node)
-#     assert_equal 2, list.count
-#   end
-# end
-#
-#   def test_it_can_count_a_list_of_many_items
-#     node4 = Node.new("node4")
-#     node3 = Node.new("node3", node4)
-#     node2 = Node.new("node2", node3)
-#     node1 = Node.new("node1", node2)
-#     list = LinkedList.new(node1)
-#     assert_equal 4, list.count
-#   end
-#
-#   def test_it_returns_the_last_item_in_list
-#     node4 = Node.new("node4")
-#     node3 = Node.new("node3", node4)
-#     node2 = Node.new("node2", node3)
-#     node1 = Node.new("node1", node2)
-#     list = LinkedList.new(node1)
-#     assert_equal node4, list.tail
-#   end
-#
-#   def test_it_returns_a_bool_if_item_included
-#     node4 = Node.new("node4")
-#     node3 = Node.new("node3", node4)
-#     node2 = Node.new("node2", node3)
-#     node1 = Node.new("node1", node2)
-#     list = LinkedList.new(node1)
-#     assert_equal true, list.include?(node3)
-#   end
-#
-
-#
-#   def test_all_produces_a_string_of_all_nodes
-#     node4 = Node.new("node4")
-#     node3 = Node.new("node3", node4)
-#     node2 = Node.new("node2", node3)
-#     node1 = Node.new("node1", node2)
-#     list = LinkedList.new(node1)
-#     assert_equal "node1 node2 node3 node4", list.all
-#   end
-
-  # def test_it_appends_a_new_node_on_the_end_of_list
-  #   node2 = Node.new("node2")
-  #   node1 = Node.new("node1", node2)
-  #   list = LinkedList.new(node1)
-  #   node3 = Node.new("node3")
-  #   list.append(node3)
-  #   assert_equal "node1 node2 node3", list.all
-  # end
-
-
-
-
-
-
-
-
-#end
