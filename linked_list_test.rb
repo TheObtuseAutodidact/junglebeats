@@ -163,15 +163,49 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "inserted zero first second third", jb.all
   end
 
-  # def test_insert_for_two_items
-  #   skip
-  #   jb = JungleBeats.new("first")
-  #   jb.append("second")
-  #   jb.append("third")
-  #   jb.prepend("zero")
-  #   jb.insert("two beats", 2)
-  #   assert_equal "zero two beats second third", jb.all
-  # end
+  def test_insert_for_two_items
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("two beats", 2)
+    assert_equal "zero first two beats second third", jb.all
+  end
+
+  def test_insert_for_four_items
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("larry moe curly shemp", 1)
+    assert_equal "zero larry moe curly shemp first second third", jb.all
+  end
+
+  def test_multiple_insertion_at_position_zero
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("larry moe curly shemp", 0)
+  end
+
+  def test_multiple_insertion_at_position_zero
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("larry moe curly shemp", 0)
+    assert_equal "curly", jb.find(2,1)
+  end
+
+  def test_multiple_insertion_at_position_zero
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("larry moe curly shemp", 0)
+    assert_equal 8, jb.count
+  end
 
 
 
