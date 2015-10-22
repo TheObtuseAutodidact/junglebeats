@@ -127,7 +127,7 @@ class JungleBeatsTest < MiniTest::Test
     assert_equal "second", jb.find(2)
   end
 
-  def test_it_inserts_a_single_element_into_specified_position
+  def test_it_inserts_a_single_element_into_varied_position
     jb = JungleBeats.new("first")
     jb.append("second")
     jb.append("third")
@@ -135,6 +135,44 @@ class JungleBeatsTest < MiniTest::Test
     jb.insert("inserted", 2)
     assert_equal "zero first inserted second third", jb.all
   end
+
+  def test_it_inserts_a_single_element_into_varied_position
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("inserted", 1)
+    assert_equal "zero inserted first second third", jb.all
+  end
+
+  def test_it_inserts_a_single_element_into_varied_position
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("inserted", 3)
+    assert_equal "zero first second inserted third", jb.all
+  end
+
+  def test_it_inserts_a_single_element_into_varied_position
+    jb = JungleBeats.new("first")
+    jb.append("second")
+    jb.append("third")
+    jb.prepend("zero")
+    jb.insert("inserted", 0)
+    assert_equal "inserted zero first second third", jb.all
+  end
+
+  # def test_insert_for_two_items
+  #   skip
+  #   jb = JungleBeats.new("first")
+  #   jb.append("second")
+  #   jb.append("third")
+  #   jb.prepend("zero")
+  #   jb.insert("two beats", 2)
+  #   assert_equal "zero two beats second third", jb.all
+  # end
+
 
 
 end

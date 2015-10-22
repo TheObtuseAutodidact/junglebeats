@@ -84,14 +84,18 @@ class JungleBeats
   end
 
   def insert(data, position)
-    new_node = Node.new(data)
-    current = @head
-    (position - 1).times do
-      current = current.link
+    if position == 0
+      prepend(data)
+    else
+      new_node = Node.new(data)
+      current = @head
+      (position - 1).times do
+        current = current.link
+      end
+      pointer = current.link
+      new_node.link = pointer
+      current.link = new_node
     end
-    pointer = current.link
-    new_node.link = pointer
-    current.link = new_node
   end
 
 end
